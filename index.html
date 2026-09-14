@@ -6,18 +6,20 @@
     <title>Zhao Tongyang - Academic Homepage</title>
     <meta
       name="description"
-      content="Academic homepage of Zhao Tongyang, an undergraduate student at Northwestern Polytechnical University."
+      content="Academic homepage of Zhao Tongyang, an undergraduate student in Data Science and Big Data Technology at Northwestern Polytechnical University."
     />
     <style>
       :root {
         color-scheme: light;
-        --ink: #1c2430;
-        --muted: #5a6678;
-        --line: #d8dee8;
-        --accent: #176b87;
-        --accent-soft: #e7f3f6;
+        --ink: #172321;
+        --muted: #536562;
+        --line: #cfdad6;
+        --accent: #166b64;
+        --accent-deep: #0d4d49;
+        --accent-soft: #e5f1ed;
+        --signal: #b74f39;
         --paper: #ffffff;
-        --wash: #f5f7fa;
+        --wash: #f2f6f4;
       }
 
       * {
@@ -33,25 +35,42 @@
       }
 
       main {
-        max-width: 880px;
+        max-width: 980px;
         margin: 0 auto;
-        padding: 48px 24px 64px;
+        padding: 52px 28px 72px;
       }
 
-      header {
-        padding-bottom: 28px;
+      .masthead {
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr);
+        gap: 22px;
+        align-items: start;
+        padding-bottom: 32px;
         border-bottom: 1px solid var(--line);
+      }
+
+      .monogram {
+        display: grid;
+        width: 84px;
+        height: 84px;
+        place-items: center;
+        border: 1px solid var(--accent);
+        border-radius: 8px;
+        background: var(--accent);
+        color: #ffffff;
+        font-size: 1.8rem;
+        font-weight: 700;
       }
 
       h1 {
         margin: 0;
-        font-size: clamp(2rem, 6vw, 3.3rem);
+        font-size: 3rem;
         line-height: 1.08;
         letter-spacing: 0;
       }
 
       h2 {
-        margin: 34px 0 12px;
+        margin: 0 0 14px;
         font-size: 1.25rem;
         letter-spacing: 0;
       }
@@ -67,16 +86,20 @@
       }
 
       .role {
-        margin-top: 12px;
+        margin-top: 8px;
         color: var(--muted);
         font-size: 1.08rem;
+      }
+
+      .program {
+        color: var(--muted);
       }
 
       .links {
         display: flex;
         flex-wrap: wrap;
         gap: 10px;
-        margin-top: 20px;
+        margin-top: 16px;
       }
 
       .links a {
@@ -92,7 +115,75 @@
       }
 
       section {
-        padding: 2px 0;
+        padding: 30px 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .intro {
+        display: grid;
+        grid-template-columns: minmax(0, 1.6fr) minmax(220px, 0.8fr);
+        gap: 32px;
+      }
+
+      .facts {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .facts li {
+        padding: 8px 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .facts li:last-child {
+        border-bottom: 0;
+      }
+
+      .facts strong {
+        display: block;
+        color: var(--accent-deep);
+        font-size: 0.9rem;
+      }
+
+      .research-list {
+        display: grid;
+        gap: 0;
+      }
+
+      .research-item {
+        display: grid;
+        grid-template-columns: 132px minmax(0, 1fr);
+        gap: 24px;
+        padding: 20px 0;
+        border-top: 1px solid var(--line);
+      }
+
+      .research-item:first-child {
+        padding-top: 0;
+        border-top: 0;
+      }
+
+      .research-date {
+        color: var(--signal);
+        font-size: 0.92rem;
+        font-weight: 700;
+      }
+
+      .research-item h3 {
+        margin: 0;
+        color: var(--accent-deep);
+        font-size: 1.07rem;
+      }
+
+      .research-item p {
+        margin: 6px 0 0;
+      }
+
+      .two-column {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 32px;
       }
 
       ul {
@@ -104,17 +195,41 @@
         margin-top: 6px;
       }
 
-      .note {
-        margin-top: 18px;
-        padding: 14px 16px;
-        border-left: 4px solid var(--accent);
-        background: var(--accent-soft);
-        color: #183440;
+      .footnote {
+        margin: 28px 0 0;
+        color: var(--muted);
+        font-size: 0.92rem;
       }
 
       @media (max-width: 560px) {
         main {
           padding: 34px 18px 48px;
+        }
+
+        .masthead,
+        .intro,
+        .two-column {
+          grid-template-columns: 1fr;
+          gap: 18px;
+        }
+
+        .masthead {
+          gap: 16px;
+        }
+
+        .monogram {
+          width: 64px;
+          height: 64px;
+          font-size: 1.4rem;
+        }
+
+        h1 {
+          font-size: 2.25rem;
+        }
+
+        .research-item {
+          grid-template-columns: 1fr;
+          gap: 4px;
         }
 
         .links a {
@@ -125,56 +240,145 @@
   </head>
   <body>
     <main>
-      <header>
-        <h1>Zhao Tongyang</h1>
-        <p class="role">
-          Undergraduate Student · Data Science and Big Data Technology,
-          Northwestern Polytechnical University
-        </p>
-        <p>
-          Email:
-          <a href="mailto:zhaotongyang@mail.nwpu.edu.cn"
-            >zhaotongyang@mail.nwpu.edu.cn</a
-          >
-        </p>
-        <div class="links" aria-label="Academic profile links">
-          <a href="https://orcid.org/0009-0002-3328-0427">ORCID</a>
+      <header class="masthead">
+        <div class="monogram" aria-hidden="true">ZT</div>
+        <div>
+          <h1>Zhao Tongyang</h1>
+          <p class="role">
+            Undergraduate Student · School of Computer Science
+          </p>
+          <p class="program">
+            Data Science and Big Data Technology · Northwestern Polytechnical
+            University
+          </p>
+          <p>
+            Email:
+            <a href="mailto:zhaotongyang@mail.nwpu.edu.cn"
+              >zhaotongyang@mail.nwpu.edu.cn</a
+            >
+          </p>
+          <div class="links" aria-label="Academic profile links">
+            <a href="https://orcid.org/0009-0002-3328-0427">ORCID</a>
+          </div>
         </div>
       </header>
 
-      <section>
-        <h2>About</h2>
-        <p>
-          I am an undergraduate student at Northwestern Polytechnical University,
-          with academic interests in AI safety and large language models.
-        </p>
-      </section>
-
-      <section>
-        <h2>Research Interests</h2>
-        <ul>
-          <li>AI Safety</li>
-          <li>Large Language Models</li>
-          <li>Data Science</li>
+      <section class="intro">
+        <div>
+          <h2>About</h2>
+          <p>
+            I am an undergraduate student in Data Science and Big Data Technology
+            at Northwestern Polytechnical University. My current interests are AI
+            safety, large language model watermarking, machine learning security,
+            and representation learning.
+          </p>
+        </div>
+        <ul class="facts" aria-label="Academic highlights">
+          <li>
+            <strong>Academic performance</strong>
+            GPA 3.915/4.1 · Rank 1/32
+          </li>
+          <li>
+            <strong>English proficiency</strong>
+            CET-6: 548
+          </li>
+          <li>
+            <strong>Current focus</strong>
+            Trustworthy AI and large language models
+          </li>
         </ul>
       </section>
 
       <section>
-        <h2>Publications</h2>
-        <p>Publications will be added here as they become available.</p>
+        <h2>Research Experience</h2>
+        <div class="research-list">
+          <article class="research-item">
+            <div class="research-date">2026 - Present</div>
+            <div>
+              <h3>Sentence-Level Semantic Watermarking for Large Language Models</h3>
+              <p>
+                Exploring robust semantic watermark embedding and detection for
+                LLM-generated text. Implemented a mixture-of-experts bias framework
+                and experimental pipeline based on an open-source watermarking
+                framework.
+              </p>
+            </div>
+          </article>
+          <article class="research-item">
+            <div class="research-date">2024 - 2026</div>
+            <div>
+              <h3>Drug-Target Interaction Prediction with 3D Representation Learning</h3>
+              <p>
+                Contributed to a completed national undergraduate innovation project.
+                Developed a mixture-of-experts multi-task learning component using
+                molecular and protein sequence and structure representations.
+              </p>
+            </div>
+          </article>
+          <article class="research-item">
+            <div class="research-date">2025 - 2026</div>
+            <div>
+              <h3>Black-Box Backdoor Attacks in Person Re-Identification</h3>
+              <p>
+                Implemented and evaluated contour-trigger design and black-box
+                transfer attack experiments for person re-identification systems.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="two-column">
+        <div>
+          <h2>Research Interests</h2>
+          <ul>
+            <li>AI Safety and Machine Learning Security</li>
+            <li>Large Language Models and Watermarking</li>
+            <li>Representation Learning and Mixture-of-Experts Models</li>
+            <li>Computer Vision and Bioinformatics</li>
+          </ul>
+        </div>
+        <div>
+          <h2>Skills</h2>
+          <ul>
+            <li>Python, C, Java, and Verilog</li>
+            <li>Machine learning experimentation and evaluation</li>
+            <li>Data preprocessing and analysis</li>
+            <li>Technical writing and literature review</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="two-column">
+        <div>
+          <h2>Education</h2>
+          <p>
+            <strong>2023 - Present</strong><br />
+            B.Eng. candidate in Data Science and Big Data Technology<br />
+            School of Computer Science, Northwestern Polytechnical University
+          </p>
+        </div>
+        <div>
+          <h2>Selected Honors</h2>
+          <ul>
+            <li>National Scholarship</li>
+            <li>National Encouragement Scholarship</li>
+            <li>First Prize, NPU Programming Laboratory Skills Competition</li>
+            <li>Meritorious Winner, Mathematical Contest in Modeling</li>
+          </ul>
+        </div>
       </section>
 
       <section>
-        <h2>Education</h2>
+        <h2>Publications</h2>
         <p>
-          2023 - Present: Data Science and Big Data Technology,
-          Northwestern Polytechnical University
+          Publications will be added here after official publication or acceptance.
         </p>
       </section>
 
-      <p class="note">
-        This page is a concise academic identity page for profile verification and
-        research contact purposes.
+      <p class="footnote">
+        This page is maintained as a concise academic identity and research contact
+        page.
       </p>
     </main>
   </body>
